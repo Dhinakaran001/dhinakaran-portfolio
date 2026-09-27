@@ -1,0 +1,95 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.footer {
+  padding: 3rem 0 2.5rem;
+  border-top: 1px solid var(--border-subtle);
+  background: var(--bg-primary);
+
+  &__container {
+    @include container;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  &__top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  &__brand {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+
+    &-name {
+      font-family: $font-display;
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--text-primary);
+    }
+
+    &-role {
+      font-family: $font-mono;
+      font-size: 0.8rem;
+      color: var(--accent-primary);
+    }
+  }
+
+  &__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+
+    &-item {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+      transition: color $transition-fast;
+
+      &:hover {
+        color: var(--accent-primary);
+      }
+    }
+  }
+
+  &__bottom {
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-subtle);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  &__copyright {
+    font-size: 0.84rem;
+    color: var(--text-muted);
+  }
+
+  &__back-top {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.5rem 0.95rem;
+    border-radius: $radius-sm;
+    border: 1px solid var(--border-subtle);
+    background: var(--bg-card);
+    color: var(--text-secondary);
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all $transition-fast;
+
+    &:hover {
+      border-color: var(--accent-primary);
+      color: var(--accent-primary);
+      transform: translateY(-2px);
+    }
+  }
+}

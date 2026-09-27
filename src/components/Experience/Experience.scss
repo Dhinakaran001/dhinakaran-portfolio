@@ -1,0 +1,205 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.experience {
+  padding: 5.5rem 0;
+  position: relative;
+
+  &__container {
+    @include container;
+  }
+
+  &__timeline {
+    position: relative;
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0.75rem;
+      bottom: 0.75rem;
+      left: 22px;
+      width: 2px;
+      background: linear-gradient(
+        180deg,
+        var(--accent-primary) 0%,
+        var(--accent-secondary) 65%,
+        transparent 100%
+      );
+
+      @include respond-to(sm) {
+        left: 14px;
+      }
+    }
+  }
+
+  &__item {
+    position: relative;
+    padding-left: 4rem;
+
+    @include respond-to(sm) {
+      padding-left: 2.65rem;
+    }
+  }
+
+  &__marker {
+    position: absolute;
+    top: 1.5rem;
+    left: 11px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--bg-primary);
+    border: 3px solid var(--accent-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+
+    @include respond-to(sm) {
+      left: 3px;
+    }
+
+    &--current {
+      box-shadow: 0 0 0 6px rgba(56, 189, 248, 0.18);
+      border-color: var(--accent-emerald);
+    }
+  }
+
+  &__card {
+    @include glass-card;
+    @include glass-card-hover;
+    padding: 2rem 2.25rem;
+
+    @include respond-to(sm) {
+      padding: 1.4rem;
+    }
+  }
+
+  &__header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  &__role {
+    font-family: $font-display;
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 0.25rem;
+  }
+
+  &__company-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--accent-primary);
+    font-weight: 600;
+    font-size: 0.96rem;
+  }
+
+  &__location {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    font-weight: 500;
+  }
+
+  &__period-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.35rem;
+
+    @include respond-to(sm) {
+      align-items: flex-start;
+    }
+  }
+
+  &__period-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.35rem 0.85rem;
+    border-radius: $radius-full;
+    background: var(--bg-chip);
+    border: 1px solid var(--border-accent);
+    color: var(--accent-primary);
+    font-family: $font-mono;
+    font-size: 0.78rem;
+    font-weight: 600;
+  }
+
+  &__current-tag {
+    font-family: $font-mono;
+    font-size: 0.72rem;
+    color: var(--accent-emerald);
+    font-weight: 600;
+  }
+
+  &__client-banner {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.45rem 0.9rem;
+    border-radius: $radius-sm;
+    background: var(--bg-secondary);
+    border-left: 3px solid var(--accent-primary);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 1.25rem;
+  }
+
+  &__highlights {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    margin-bottom: 1.5rem;
+
+    &-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.65rem;
+      font-size: 0.94rem;
+      color: var(--text-secondary);
+      line-height: 1.65;
+
+      svg {
+        color: var(--accent-primary);
+        flex-shrink: 0;
+        margin-top: 0.3rem;
+      }
+    }
+  }
+
+  &__tech-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    padding-top: 1.15rem;
+    border-top: 1px solid var(--border-subtle);
+  }
+
+  &__tech-chip {
+    font-family: $font-mono;
+    font-size: 0.74rem;
+    font-weight: 500;
+    padding: 0.25rem 0.7rem;
+    border-radius: $radius-full;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-subtle);
+    color: var(--text-primary);
+  }
+}

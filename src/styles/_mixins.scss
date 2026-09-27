@@ -1,0 +1,72 @@
+@use 'variables' as *;
+
+// =============================================================================
+// RESPONSIVE & UI MIXINS
+// =============================================================================
+
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == xs {
+    @media (max-width: $bp-xs) {
+      @content;
+    }
+  } @else if $breakpoint == sm {
+    @media (max-width: $bp-sm) {
+      @content;
+    }
+  } @else if $breakpoint == md {
+    @media (max-width: $bp-md) {
+      @content;
+    }
+  } @else if $breakpoint == lg {
+    @media (max-width: $bp-lg) {
+      @content;
+    }
+  } @else if $breakpoint == xl {
+    @media (max-width: $bp-xl) {
+      @content;
+    }
+  }
+}
+
+@mixin container {
+  width: 100%;
+  max-width: $container-max-width;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+
+  @include respond-to(sm) {
+    padding-inline: 1rem;
+  }
+}
+
+@mixin glass-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: $radius-lg;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: var(--shadow-card);
+  transition: transform $transition-base, border-color $transition-base, box-shadow $transition-base;
+}
+
+@mixin glass-card-hover {
+  &:hover {
+    transform: translateY(-4px);
+    border-color: var(--border-accent);
+    box-shadow: var(--shadow-card-hover);
+  }
+}
+
+@mixin focus-ring {
+  &:focus-visible {
+    outline: 2px solid var(--accent-primary);
+    outline-offset: 3px;
+  }
+}
+
+@mixin text-gradient {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

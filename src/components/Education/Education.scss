@@ -1,0 +1,139 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.education {
+  padding: 5.5rem 0;
+
+  &__container {
+    @include container;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2.25rem;
+
+    @include respond-to(md) {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+
+  &__card {
+    @include glass-card;
+    @include glass-card-hover;
+    padding: 1.85rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+
+    &--primary {
+      border-color: var(--border-accent);
+    }
+  }
+
+  &__card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  &__icon-badge {
+    width: 42px;
+    height: 42px;
+    border-radius: $radius-md;
+    background: var(--bg-chip);
+    border: 1px solid var(--border-accent);
+    color: var(--accent-primary);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__period {
+    font-family: $font-mono;
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 0.3rem 0.75rem;
+    border-radius: $radius-full;
+    background: var(--bg-chip);
+    color: var(--accent-primary);
+    border: 1px solid var(--border-accent);
+  }
+
+  &__degree {
+    font-family: $font-display;
+    font-size: 1.18rem;
+    font-weight: 800;
+    color: var(--text-primary);
+  }
+
+  &__field {
+    font-size: 0.94rem;
+    font-weight: 600;
+    color: var(--accent-primary);
+  }
+
+  &__institution {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    margin-top: 0.25rem;
+  }
+
+  &__languages-bar {
+    @include glass-card;
+    padding: 1.5rem 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.25rem;
+  }
+
+  &__languages-title {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    font-family: $font-display;
+    font-size: 1.08rem;
+    font-weight: 700;
+    color: var(--text-primary);
+
+    svg {
+      color: var(--accent-primary);
+    }
+  }
+
+  &__languages-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  &__language-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.5rem 1rem;
+    border-radius: $radius-full;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-subtle);
+
+    &-name {
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: var(--text-primary);
+    }
+
+    &-level {
+      font-family: $font-mono;
+      font-size: 0.75rem;
+      color: var(--accent-primary);
+    }
+  }
+}

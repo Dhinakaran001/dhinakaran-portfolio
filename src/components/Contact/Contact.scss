@@ -1,0 +1,219 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.contact {
+  padding: 5.5rem 0;
+  background: var(--gradient-surface);
+  border-top: 1px solid var(--border-subtle);
+
+  &__container {
+    @include container;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+    gap: 2.25rem;
+    align-items: start;
+
+    @include respond-to(lg) {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+
+  &__channels {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+  }
+
+  &__channel-card {
+    @include glass-card;
+    @include glass-card-hover;
+    padding: 1.35rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  &__channel-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    min-width: 0;
+  }
+
+  &__channel-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: $radius-md;
+    background: var(--bg-chip);
+    border: 1px solid var(--border-accent);
+    color: var(--accent-primary);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  &__channel-label {
+    display: block;
+    font-family: $font-mono;
+    font-size: 0.74rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--text-muted);
+    margin-bottom: 0.15rem;
+  }
+
+  &__channel-value {
+    display: block;
+    font-size: 0.96rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    word-break: break-word;
+
+    &:hover {
+      color: var(--accent-primary);
+    }
+  }
+
+  &__copy-btn {
+    padding: 0.45rem 0.75rem;
+    border-radius: $radius-sm;
+    border: 1px solid var(--border-subtle);
+    background: var(--bg-secondary);
+    color: var(--text-secondary);
+    font-family: $font-mono;
+    font-size: 0.75rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    cursor: pointer;
+    transition: all $transition-fast;
+    flex-shrink: 0;
+
+    &:hover {
+      border-color: var(--accent-primary);
+      color: var(--accent-primary);
+    }
+
+    &--copied {
+      border-color: var(--accent-emerald);
+      color: var(--accent-emerald);
+    }
+  }
+
+  &__form-card {
+    @include glass-card;
+    padding: 2.25rem;
+
+    @include respond-to(sm) {
+      padding: 1.5rem;
+    }
+  }
+
+  &__form-title {
+    font-family: $font-display;
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 0.35rem;
+  }
+
+  &__form-subtitle {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.15rem;
+  }
+
+  &__row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.1rem;
+
+    @include respond-to(sm) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  &__label {
+    font-size: 0.84rem;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  &__input,
+  &__textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border-radius: $radius-sm;
+    border: 1px solid var(--border-strong);
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    font-size: 0.92rem;
+    transition: border-color $transition-fast, box-shadow $transition-fast;
+
+    &::placeholder {
+      color: var(--text-muted);
+    }
+
+    &:focus {
+      outline: none;
+      border-color: var(--accent-primary);
+      box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.15);
+    }
+  }
+
+  &__textarea {
+    min-height: 125px;
+    resize: vertical;
+  }
+
+  &__error {
+    font-size: 0.78rem;
+    color: #f87171;
+    font-weight: 500;
+  }
+
+  &__submit-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.55rem;
+    padding: 0.9rem 1.65rem;
+    border-radius: $radius-md;
+    border: none;
+    background: var(--gradient-primary);
+    color: #040711;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform $transition-fast, box-shadow $transition-fast;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 26px rgba(56, 189, 248, 0.35);
+    }
+  }
+
+  &__status {
+    font-size: 0.86rem;
+    color: var(--accent-emerald);
+    font-weight: 600;
+  }
+}
