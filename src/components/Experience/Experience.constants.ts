@@ -17,7 +17,8 @@ export const EXPERIENCE_ROLES: ExperienceRole[] = [
     period: 'May 2025 – Present',
     startDateIso: '2025-05-01',
     isCurrent: true,
-    clientProject: 'Enterprise Client: RingCentral ACE (B2B SaaS Contact Center)',
+    clientProject:
+      'Enterprise Client: RingCentral ACE (B2B SaaS Contact Center)',
     highlights: [
       'Develop and maintain frontend modules for RingCentral ACE, an enterprise B2B SaaS contact center platform, as a Senior React.js and TypeScript developer.',
       'Implemented WCAG accessibility standards across the product, delivering inclusive, compliant user experiences for enterprise clients.',
@@ -69,26 +70,26 @@ export const EXPERIENCE_ROLES: ExperienceRole[] = [
       'GitLab CI/CD',
     ],
   },
-  {
-    id: 'be-practical',
-    company: 'Be Practical Tech Solutions',
-    role: 'MERN Stack Developer Intern & Trainee',
-    location: 'Bengaluru, India',
-    period: '2022 (6 Months)',
-    isCurrent: false,
-    clientProject: 'Full Stack MERN Development & Responsive Web Architecture',
-    highlights: [
-      'Completed intensive 6-month MERN Full Stack internship and hands-on engineering program.',
-      'Built full-stack multi-vendor e-commerce applications, RESTful APIs with Node.js/Express/MongoDB, and responsive UI architectures.',
-    ],
-    technologies: [
-      'React.js',
-      'Node.js',
-      'Express.js',
-      'MongoDB',
-      'HTML5 & CSS3',
-      'Bootstrap',
-      'Git',
-    ],
-  },
+  // {
+  //   id: 'be-practical',
+  //   company: 'Be Practical Tech Solutions',
+  //   role: 'MERN Stack Developer Intern & Trainee',
+  //   location: 'Bengaluru, India',
+  //   period: '2022 (6 Months)',
+  //   isCurrent: false,
+  //   clientProject: 'Full Stack MERN Development & Responsive Web Architecture',
+  //   highlights: [
+  //     'Completed intensive 6-month MERN Full Stack internship and hands-on engineering program.',
+  //     'Built full-stack multi-vendor e-commerce applications, RESTful APIs with Node.js/Express/MongoDB, and responsive UI architectures.',
+  //   ],
+  //   technologies: [
+  //     'React.js',
+  //     'Node.js',
+  //     'Express.js',
+  //     'MongoDB',
+  //     'HTML5 & CSS3',
+  //     'Bootstrap',
+  //     'Git',
+  //   ],
+  // },
 ];
