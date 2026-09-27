@@ -15,7 +15,7 @@ export const HERO_CONTENT = {
   summary:
     'Frontend Engineer with 4+ years of experience architecting large-scale enterprise B2B SaaS & MERN web applications using React.js and TypeScript. Specialized in component-driven design systems, Redux Toolkit & React Query state management, WCAG accessibility compliance, and AI-assisted engineering workflows.',
   resumeUrl:
-    'https://drive.google.com/file/d/1Mu9MoPTwbLgNrWuVUQnW9wHRTqB_bQ6O/view?usp=sharing',
+    'https://drive.google.com/file/d/1JHEOkGg0uMV3Oc3LePz8DxCvjUNQriLG/view?usp=drive_link',
 };
 
 export const HERO_ANIMATED_ROLES: string[] = [

@@ -14,4 +14,4 @@ export const NAV_ITEMS: NavItem[] = [
 ];
 
 export const RESUME_DOWNLOAD_URL =
-  'https://drive.google.com/file/d/1Mu9MoPTwbLgNrWuVUQnW9wHRTqB_bQ6O/view?usp=sharing';
+  'https://drive.google.com/file/d/1JHEOkGg0uMV3Oc3LePz8DxCvjUNQriLG/view?usp=drive_link';
